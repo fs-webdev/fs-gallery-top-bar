@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>birch-gallery-top-bar Demo</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../birch-gallery-top-bar.html">
+    <style>
+      i[albums-toggle] {
+        width: 30px;
+        height: 100%;
+        display: inline-block;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 24px 16px;
+        background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20xmlns%3Asketch%3D%22http%3A//www.bohemiancoding.com/sketch/ns%22%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20version%3D%221.1%22%3E%0A%20%20%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%0A%20%20%20%20%3Cg%20id%3D%22gallery-grid-my-memories-mobile-copy-2%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-11.000000%2C%20-55.000000%29%22%20fill%3D%22%23333331%22%3E%0A%20%20%20%20%20%20%3Cg%20id%3D%22Shape-Copy-3-+-Shape-Copy%22%20sketch%3Atype%3D%22MSLayerGroup%22%20transform%3D%22translate%2811.000000%2C%2055.000000%29%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M8.89%201.07L11.25%203.42%2011.56%203.73%2012%203.73%2018.67%203.73C18.81%203.73%2018.93%203.86%2018.93%204L18.93%209.33C18.93%209.48%2018.81%209.6%2018.67%209.6%2017.34%209.6%2016.27%2010.68%2016.27%2012L16.27%2014.67C16.27%2014.81%2016.14%2014.93%2016%2014.93L1.33%2014.93C1.19%2014.93%201.07%2014.81%201.07%2014.67L1.07%203.11%203.11%201.07%208.89%201.07%208.89%201.07ZM9.33%200L2.67%200%200%202.67%200%2014.67C0%2015.4%200.6%2016%201.33%2016L16%2016C16.73%2016%2017.33%2015.4%2017.33%2014.67L17.33%2012C17.33%2011.27%2017.93%2010.67%2018.67%2010.67%2019.4%2010.67%2020%2010.07%2020%209.33L20%204C20%203.27%2019.4%202.67%2018.67%202.67L12%202.67%209.33%200%209.33%200Z%22%20id%3D%22Shape-Copy-3%22%20sketch%3Atype%3D%22MSShapeGroup%22/%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M1.47%2015.33C1.47%2014.99%201.7%2014.14%201.98%2013.49L4.93%206.61C5.2%205.99%205.99%205.47%206.67%205.47L22.67%205.47C22.98%205.47%2023.22%205.58%2023.36%205.78%2023.5%205.97%2023.52%206.25%2023.41%206.53L20.34%2014.7C20.11%2015.33%2019.34%2015.87%2018.67%2015.87L2.67%2015.87C1.96%2015.87%201.47%2015.59%201.47%2015.33Z%22%20id%3D%22Shape-Copy%22%20sketch%3Atype%3D%22MSShapeGroup%22/%3E%0A%20%20%20%20%20%20%3C/g%3E%0A%20%20%20%20%3C/g%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E%0A');
+      }
+    </style>
+  </head>
+  <body unresolved>
+
+    <p>An example of <code>&lt;birch-gallery-top-bar&gt;</code>:</p>
+
+    <birch-gallery-top-bar current-view='My Memories'>
+      <i albums-toggle></i>
+    </birch-gallery-top-bar>
+
+    <script>
+      var seedElement = document.querySelector('birch-gallery-top-bar');
+      
+      document.addEventListener("birch-gallery-top-bar-lasers", function(e) {
+        console.log(e.detail.sound);
+      });
+      
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+<link rel="import" href="../birch-artifact-filters/birch-artifact-filters.html">
+<link rel="import" href="../layout/layout.html">
+<link rel="import" href="../fs-styles/fs-styles.html">
+<link rel="import" href="../wc-i18n/wc-i18n.html">
+
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+    <birch-gallery-top-bar></birch-gallery-top-bar>
+
+@group Seed Elements
+@element birch-gallery-top-bar
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="birch-gallery-top-bar">
+  <style include='fs-styles'></style>
+  <link rel="import" type="css" href="birch-gallery-top-bar.css">
+  <template>
+    <wc-i18n-src locale='[[_lang]]' domain='birch-gallery-top-bar' locale-dir='[[localeDir()]]' locale-strings='{{_i18n}}'></wc-i18n-src>
+    <iron-media-query query="(max-width: 979px)" query-matches="{{_mobile}}"></iron-media-query>
+    <div id='wrap' class="layout veritcal center center-justified menu-wrap">
+      <div class='flex-1 layout horizontal center justified inner-menu' hidden='[[selectMode]]'>
+        <div class='top-container'>
+          <template is='dom-if' if="[[_mobile]]">
+            <content select='[mobile-header]'></content>
+          </template>
+          <template is='dom-if' if="[[!_mobile]]">
+            <birch-artifact-filters class='desktop-filters' filter-val='{{filterVal}}'></birch-artifact-filters>
+            <div class="layout horizontal center desktop-sort-search">
+              <input type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]'>
+            </div>
+          </template>
+        </div>
+        <!-- Toggle select / search bar -->
+        <div class='layout horizontal center functions' hidden='[[!_mobile]]'>
+          <i id='search' class='search-icon search-icon-image' on-tap='_toggleSearchMenu'></i>
+        </div>
+
+      </div>
+      <!-- Search Menu -->
+      <template is='dom-if' if="[[_mobile]]">
+        <div class="layout horizontal center relative inner-menu search-menu">
+          <input type="text" value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]' class='search-text search-icon-image'>
+          <span on-click="_clearSearch" class="search-close"></span>
+        </div>
+      </template>
+    </div>
+  
+  </template>
+</dom-module>
+
+<script>
+(function() {
+  Polymer({
+    is: 'birch-gallery-top-bar',
+    behaviors: [
+      WCI18nBehavior,
+    ],
+    properties: {
+      /**
+       * The raw string value to data bind
+       * to for inputs
+       * @type {String}
+       */
+      _rawSearchVal: {
+        type: String,
+        value: '',
+        observer: '_updateSearchVal'
+      },
+
+      /**
+       * The current value of the search 
+       * input
+       *
+       * _NOTE: This is debounced so it only
+       * updates 200ms after a user stops 
+       * typing_
+       * @type {String}
+       */
+      searchVal: {
+        type: String,
+        value: '',
+        readOnly: true,
+        notify: true
+      },
+
+      /**
+       * The current filter value
+       * @type {String}
+       */
+      filterVal: {
+        type: String,
+        notify: true
+      }
+    },
+    _toggleSearchMenu: function() {
+      this.$.wrap.classList.toggle('expanded');
+    },
+    _clearSearch: function() {
+      this._rawSearchVal = '';
+    },
+    _updateSearchVal: function(val) {
+      this.debounce('birch-gallery-top-bar-searchVal-update', function() {
+        this._setSearchVal(val);
+      }.bind(this), 200);
+    }
+  });
+})();
+
+</script>
