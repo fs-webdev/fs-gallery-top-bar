@@ -12,6 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../birch-artifact-filters/birch-artifact-filters.html">
 <link rel="import" href="../layout/layout.html">
 <link rel="import" href="../fs-styles/fs-styles.html">
+<link rel="import" href="../oak-i18n-behavior/oak-i18n-behavior.html">
 <link rel="import" href="../wc-i18n/wc-i18n.html">
 
 <!--
@@ -30,7 +31,7 @@ Example:
   <style include='fs-styles'></style>
   <link rel="import" type="css" href="birch-gallery-top-bar.css">
   <template>
-    <wc-i18n-src locale='[[_lang]]' domain='birch-gallery-top-bar' locale-dir='[[localeDir()]]' locale-strings='{{_i18n}}'></wc-i18n-src>
+    <wc-i18n-src locale='[[lang]]' domain='birch-gallery-top-bar' locale-dir='[[localeDir()]]' locale-strings='{{_i18n}}'></wc-i18n-src>
     <iron-media-query query="(max-width: 979px)" query-matches="{{_mobile}}"></iron-media-query>
     <div id='wrap' class="layout veritcal center center-justified menu-wrap">
       <div class='flex-1 layout horizontal center justified inner-menu' hidden='[[selectMode]]'>
@@ -69,6 +70,7 @@ Example:
     is: 'birch-gallery-top-bar',
     behaviors: [
       WCI18nBehavior,
+      OakI18nBehavior
     ],
     properties: {
       /**
