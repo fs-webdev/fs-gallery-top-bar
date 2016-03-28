@@ -26,10 +26,10 @@
 					myEl = fixture('top-bar-fixture');
 				});
 
-				 test('search input box gets cleared on x button tap', function() {
+				 test('search input box gets cleared on x button click', function() {
 				 	flush(function() {
 				 		if (myEl._mobile) {
-				 			Polymer.dom(myEl.root).querySelector('#mobileClearSearch').tap()
+				 			Polymer.dom(myEl.root).querySelector('#mobileClearSearch').click()
 				 			assert.equal(myEl._rawSearchVal, '');
 				 		}
 				 	});
