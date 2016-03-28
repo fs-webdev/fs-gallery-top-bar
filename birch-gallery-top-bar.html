@@ -42,7 +42,7 @@ Example:
           <template is='dom-if' if="[[!_mobile]]">
             <birch-artifact-filters class='desktop-filters' filter-val='{{filterVal}}'></birch-artifact-filters>
             <div class="layout horizontal center desktop-sort-search">
-              <input type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]'>
+              <input id='dInput'type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]'>
             </div>
           </template>
         </div>
@@ -55,8 +55,8 @@ Example:
       <!-- Search Menu -->
       <template is='dom-if' if="[[_mobile]]">
         <div class="layout horizontal center relative inner-menu search-menu">
-          <input type="text" value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]' class='search-text search-icon-image'>
-          <span on-click="_clearSearch" class="search-close"></span>
+          <input id='mInput' type="text" value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]' class='search-text search-icon-image'>
+          <span id='mobileClearSearch' on-click="_clearSearch" class="search-close"></span>
         </div>
       </template>
     </div>
