@@ -26,22 +26,16 @@
 					myEl = fixture('top-bar-fixture');
 				});
 
-				/**
-				 * Test the clear button in the mobile view
-				 */
-				 test('test query selector', function() {
+				 test('search input box gets cleared on x button tap', function() {
 				 	flush(function() {
 				 		if (myEl._mobile) {
-				 			Polymer.dom(myEl.root).querySelector('#mobileClearSearch').click()
+				 			Polymer.dom(myEl.root).querySelector('#mobileClearSearch').tap()
 				 			assert.equal(myEl._rawSearchVal, '');
 				 		}
 				 	});
 				 });
 
-				/**
-				 * Test the _updateSearchVal function
-				 */
-				test('update the search val', function(done) {
+				test('search val gets updated when adding text to input', function(done) {
 					var input;
 					flush(function() {
 						if (myEl._mobile) {
@@ -65,10 +59,8 @@
 						fireKey(input);
 					});
 				});
-				/**
-				 * Test Responsiveness
-				 */
-				test('Test for responsiveness', function() {
+
+				test('display the appropriate elements based on screen size', function() {
 					flush(function() {
 						if (myEl._mobile) {
 							assert.isOk(Polymer.dom(myEl.root).querySelector('#mInput'), 'Mobile view');
