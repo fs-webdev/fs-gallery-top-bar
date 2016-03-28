@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Step 1: import the element to test -->
+    <link rel="import" href="../birch-gallery-top-bar.html">
+		
+	</head>
+	<body>
+		<test-fixture id='top-bar-fixture'>
+			<template>
+				<birch-gallery-top-bar></birch-gallery-top-bar>
+			</template>
+    </test-fixture>
+    
+	  <script>
+			suite('<birch-gallery-top-bar>', function() {
+				var myEl;
+
+				setup(function() {
+					//Grab everything from the test-fixture
+					myEl = fixture('top-bar-fixture');
+				});
+
+				 test('search input box gets cleared on x button click', function() {
+				 	flush(function() {
+				 		if (myEl._mobile) {
+				 			Polymer.dom(myEl.root).querySelector('#mobileClearSearch').click()
+				 			assert.equal(myEl._rawSearchVal, '');
+				 		}
+				 	});
+				 });
+
+				test('search val gets updated when adding text to input', function(done) {
+					var input;
+					flush(function() {
+						if (myEl._mobile) {
+							input = Polymer.dom(myEl.root).querySelector('#mInput')
+							input.value='abc';
+						} else {
+							Polymer.dom(myEl.root).querySelector('#dInput')
+							input.value='abc';
+						}
+						myEl.addEventListener('input', function(e) {
+							assert.equal(myEl._rawSearchVal, 'abc');
+							done();
+						});
+						// Create an event
+						function fireKey(el) {
+							var eventObj = document.createEvent('Events');
+	                eventObj.initEvent('input', true, true);
+	                el.dispatchEvent(eventObj);
+						}
+						// Event has to be fired from the input field
+						fireKey(input);
+					});
+				});
+
+				test('display the appropriate elements based on screen size', function() {
+					flush(function() {
+						if (myEl._mobile) {
+							assert.isOk(Polymer.dom(myEl.root).querySelector('#mInput'), 'Mobile view');
+							assert.isNotOk(Polymer.dom(myEl.root).querySelector('birch-artifact-filters'));
+						} else {
+							assert.isOk(Polymer.dom(myEl.root).querySelector('#dInput'), 'Desktop view');
+							assert.isOk(Polymer.dom(myEl.root).querySelector('birch-artifact-filters'));
+						}
+					});
+				})
+			});
+		</script>
+	</body>
+</html>
