@@ -34,7 +34,7 @@ Example:
     <wc-i18n-src locale='[[lang]]' domain='birch-gallery-top-bar' locale-dir='[[localeDir()]]' locale-strings='{{_i18n}}'></wc-i18n-src>
     <iron-media-query query="(max-width: 979px)" query-matches="{{_mobile}}"></iron-media-query>
     <div id='wrap' class="layout veritcal center center-justified menu-wrap">
-      <div class='flex-1 layout horizontal center justified inner-menu' hidden='[[selectMode]]'>
+      <div class='flex-1 layout horizontal center justified inner-menu' hidden$='[[selectMode]]'>
         <div class='top-container'>
           <template is='dom-if' if="[[_mobile]]">
             <content select='[mobile-header]'></content>
@@ -47,7 +47,7 @@ Example:
           </template>
         </div>
         <!-- Toggle select / search bar -->
-        <div class='layout horizontal center functions' hidden='[[!_mobile]]'>
+        <div class='layout horizontal center functions' hidden$='[[!_mobile]]'>
           <i id='search' class='search-icon search-icon-image' on-tap='_toggleSearchMenu'></i>
         </div>
 
