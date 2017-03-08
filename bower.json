@@ -23,8 +23,8 @@
     "layout": "Polymer/layout",
     "fs-styles": "fs-webdev/fs-styles#~1.8.0",
     "wc-i18n": "jshcrowthe/wc-i18n#^1.1.0",
-    "birch-artifact-filters": "FamilySearchElements/birch-artifact-filters",
-    "oak-i18n-behavior": "FamilySearchElements/oak-i18n-behavior"
+    "birch-artifact-filters": "FamilySearchElements/birch-artifact-filters#1.x",
+    "oak-i18n-behavior": "FamilySearchElements/oak-i18n-behavior#1.x"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
