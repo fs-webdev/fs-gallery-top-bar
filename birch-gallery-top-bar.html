@@ -31,7 +31,6 @@ Example:
   <style include='fs-styles'></style>
   <link rel="import" type="css" href="birch-gallery-top-bar.css">
   <template>
-    <wc-i18n-src locale='[[lang]]' domain='birch-gallery-top-bar' locale-dir='[[localeDir()]]' locale-strings='{{_i18n}}'></wc-i18n-src>
     <iron-media-query query="(max-width: 979px)" query-matches="{{_mobile}}"></iron-media-query>
     <div id='wrap' class="layout veritcal center center-justified menu-wrap">
       <div class='flex-1 layout horizontal center justified inner-menu' hidden$='[[selectMode]]'>
@@ -42,7 +41,7 @@ Example:
           <template is='dom-if' if="[[!_mobile]]">
             <birch-artifact-filters class='desktop-filters' filter-val='{{filterVal}}'></birch-artifact-filters>
             <div class="layout horizontal center desktop-sort-search">
-              <input id='dInput'type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]'>
+              <input id='dInput' type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$="[[i18n('search')]]">
             </div>
           </template>
         </div>
@@ -55,12 +54,12 @@ Example:
       <!-- Search Menu -->
       <template is='dom-if' if="[[_mobile]]">
         <div class="layout horizontal center relative inner-menu search-menu">
-          <input id='mInput' type="text" value='{{_rawSearchVal::input}}' placeholder$='[[_i18n.search]]' class='search-text search-icon-image'>
+          <input id='mInput' type="text" value='{{_rawSearchVal::input}}' placeholder$="[[i18n('search')]]" class='search-text search-icon-image'>
           <span id='mobileClearSearch' on-click="_clearSearch" class="search-close"></span>
         </div>
       </template>
     </div>
-  
+
   </template>
 </dom-module>
 
@@ -69,7 +68,7 @@ Example:
   Polymer({
     is: 'birch-gallery-top-bar',
     behaviors: [
-      WCI18nBehavior,
+      WCI18n(),
       OakI18nBehavior
     ],
     properties: {
@@ -85,11 +84,11 @@ Example:
       },
 
       /**
-       * The current value of the search 
+       * The current value of the search
        * input
        *
        * _NOTE: This is debounced so it only
-       * updates 200ms after a user stops 
+       * updates 200ms after a user stops
        * typing_
        * @type {String}
        */

@@ -22,8 +22,8 @@
     "iron-media-query": "PolymerElements/iron-media-query#~1.0.6",
     "layout": "Polymer/layout",
     "fs-styles": "fs-webdev/fs-styles#~1.8.0",
-    "wc-i18n": "jshcrowthe/wc-i18n#^1.1.0",
-    "birch-artifact-filters": "FamilySearchElements/birch-artifact-filters#1.x",
+    "wc-i18n": "jshcrowthe/wc-i18n#^2.1.0",
+    "birch-artifact-filters": "FamilySearchElements/birch-artifact-filters#2.x",
     "oak-i18n-behavior": "FamilySearchElements/oak-i18n-behavior#1.x"
   },
   "devDependencies": {
