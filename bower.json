@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "*"
+    "web-component-tester": "*",
+    "es6-promise-polyfill": "git+https://github.com/taylorhakes/promise-polyfill#6.0.2"
   },
   "resolutions": {
     "polymer": "^1.2.0"

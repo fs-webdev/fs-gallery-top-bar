@@ -6,6 +6,8 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
+    <script src="../../es6-promise-polyfill/promise.js"></script>
+
     <!-- Step 1: import the element to test -->
     <link rel="import" href="../birch-gallery-top-bar.html">
 		
@@ -22,7 +24,6 @@
 				var myEl;
 
 				setup(function() {
-					//Grab everything from the test-fixture
 					myEl = fixture('top-bar-fixture');
 				});
 
