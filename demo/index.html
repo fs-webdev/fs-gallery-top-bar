@@ -12,9 +12,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>birch-gallery-top-bar Demo</title>
+    <title>fs-gallery-top-bar Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../birch-gallery-top-bar.html">
+    <link rel="import" href="../fs-gallery-top-bar.html">
     <style>
       i[albums-toggle] {
         width: 30px;
@@ -29,7 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body unresolved>
 
-    <p>An example of <code>&lt;birch-gallery-top-bar&gt;</code>:</p>
+    <p>An example of <code>&lt;fs-gallery-top-bar&gt;</code>:</p>
 
     <div>
       <label for="langPicker">Choose page language: </label>
@@ -41,20 +41,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </select>
     </div>
 
-    <birch-gallery-top-bar current-view='My Memories'>
+    <fs-gallery-top-bar current-view='My Memories'>
       <i albums-toggle></i>
-    </birch-gallery-top-bar>
+    </fs-gallery-top-bar>
 
     <script>
-      var seedElement = document.querySelector('birch-gallery-top-bar');
+      var seedElement = document.querySelector('fs-gallery-top-bar');
 
-      document.addEventListener("birch-gallery-top-bar-lasers", function(e) {
+      document.addEventListener("fs-gallery-top-bar-lasers", function(e) {
         console.log(e.detail.sound);
       });
 
       var langPicker = document.querySelector('#langPicker');
       langPicker.addEventListener('change', function() {
-        document.querySelector('birch-gallery-top-bar').language = langPicker.value;
+        document.querySelector('fs-gallery-top-bar').language = langPicker.value;
       });
 
     </script>

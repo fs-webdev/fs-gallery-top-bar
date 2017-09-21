@@ -1,5 +1,5 @@
 {
-  "name": "birch-gallery-top-bar",
+  "name": "fs-gallery-top-bar",
   "version": "2.0.0",
   "authors": [
     "Anonymous <anonymous@example.com>"
@@ -10,7 +10,7 @@
     "polymer",
     "seed"
   ],
-  "main": "birch-gallery-top-bar.html",
+  "main": "fs-gallery-top-bar.html",
   "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/<USERNAME>/seed-element/",
   "ignore": [
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "*",
+    "web-component-tester": "^6.2.0",
     "es6-promise-polyfill": "git+https://github.com/taylorhakes/promise-polyfill#6.0.2"
   },
   "resolutions": {
