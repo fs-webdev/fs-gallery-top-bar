@@ -9,7 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-media-query/iron-media-query.html">
-<link rel="import" href="../birch-artifact-filters/birch-artifact-filters.html">
+<link rel="import" href="../fs-artifact-filters/fs-artifact-filters.html">
 <link rel="import" href="../layout/layout.html">
 <link rel="import" href="../fs-styles/fs-styles.html">
 <link rel="import" href="../oak-i18n-behavior/oak-i18n-behavior.html">
@@ -39,7 +39,7 @@ Example:
             <content select='[mobile-header]'></content>
           </template>
           <template is='dom-if' if="[[!_mobile]]">
-            <birch-artifact-filters class='desktop-filters' filter-val='{{filterVal}}'></birch-artifact-filters>
+            <fs-artifact-filters class='desktop-filters' filter-val='{{filterVal}}'></fs-artifact-filters>
             <div class="layout horizontal center desktop-sort-search">
               <input id='dInput' type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$="[[i18n('search')]]">
             </div>
