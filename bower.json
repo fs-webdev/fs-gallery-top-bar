@@ -1,6 +1,6 @@
 {
   "name": "fs-gallery-top-bar",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "authors": [
     "Anonymous <anonymous@example.com>"
   ],
@@ -23,7 +23,7 @@
     "layout": "fs-webdev/layout#1.0.0",
     "fs-styles": "fs-webdev/fs-styles#~1.8.0",
     "wc-i18n": "jshcrowthe/wc-i18n#^2.1.0",
-    "fs-artifact-filters": "fs-webdev/fs-artifact-filters#2.x",
+    "fs-artifact-filters": "fs-webdev/fs-artifact-filters#3.x",
     "oak-i18n-behavior": "FamilySearchElements/oak-i18n-behavior#1.x"
   },
   "devDependencies": {
