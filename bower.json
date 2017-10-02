@@ -24,7 +24,7 @@
     "fs-styles": "fs-webdev/fs-styles#~1.8.0",
     "wc-i18n": "jshcrowthe/wc-i18n#^2.1.0",
     "fs-artifact-filters": "fs-webdev/fs-artifact-filters#3.x",
-    "oak-i18n-behavior": "FamilySearchElements/oak-i18n-behavior#1.x"
+    "oak-i18n-behavior": "fs-webdev/oak-i18n-behavior#1.x"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
