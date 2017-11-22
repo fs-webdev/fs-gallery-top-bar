@@ -10,7 +10,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-media-query/iron-media-query.html">
 <link rel="import" href="../fs-artifact-filters/fs-artifact-filters.html">
-<link rel="import" href="../layout/layout.html">
 <link rel="import" href="../fs-styles/fs-styles.html">
 <link rel="import" href="../oak-i18n-behavior/oak-i18n-behavior.html">
 <link rel="import" href="../wc-i18n/wc-i18n.html">
@@ -303,30 +302,41 @@ Example:
       .desktop-sort-search {
         float:right;
       }
+
+      .flex-center {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .justify {
+        justify-content: space-between;
+      }
+
     </style>
     <iron-media-query query="(max-width: 979px)" query-matches="{{_mobile}}"></iron-media-query>
-    <div id='wrap' class="layout veritcal center center-justified menu-wrap">
-      <div class='flex-1 layout horizontal center justified inner-menu' hidden$='[[selectMode]]'>
+    <div id='wrap' class="menu-wrap">
+      <div class='flex-1 flex-center justify inner-menu' hidden$='[[selectMode]]'>
         <div class='top-container'>
           <template is='dom-if' if="[[_mobile]]">
             <content select='[mobile-header]'></content>
           </template>
           <template is='dom-if' if="[[!_mobile]]">
             <fs-artifact-filters class='desktop-filters' filter-val='{{filterVal}}'></fs-artifact-filters>
-            <div class="layout horizontal center desktop-sort-search">
+            <div class="desktop-sort-search">
               <input id='dInput' type="text" class='search-icon-image filter-input' value='{{_rawSearchVal::input}}' placeholder$="[[i18n('search')]]">
             </div>
           </template>
         </div>
         <!-- Toggle select / search bar -->
-        <div class='layout horizontal center functions' hidden$='[[!_mobile]]'>
+        <div class='functions' hidden$='[[!_mobile]]'>
           <i id='search' class='search-icon search-icon-image' on-tap='_toggleSearchMenu'></i>
         </div>
 
       </div>
       <!-- Search Menu -->
       <template is='dom-if' if="[[_mobile]]">
-        <div class="layout horizontal center relative inner-menu search-menu">
+        <div class="flex-center relative inner-menu search-menu">
           <input id='mInput' type="text" value='{{_rawSearchVal::input}}' placeholder$="[[i18n('search')]]" class='search-text search-icon-image'>
           <span id='mobileClearSearch' on-click="_clearSearch" class="search-close"></span>
         </div>
