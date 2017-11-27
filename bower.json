@@ -18,20 +18,35 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0",
-    "iron-media-query": "PolymerElements/iron-media-query#~1.0.6",
-    "layout": "fs-webdev/layout#1.0.0",
-    "fs-styles": "fs-webdev/fs-styles#~1.8.0",
+    "polymer": "Polymer/polymer#1 - 2",
+    "iron-media-query": "PolymerElements/iron-media-query#^2.0.0",
+    "fs-styles": "fs-webdev/fs-styles#3.x",
     "wc-i18n": "jshcrowthe/wc-i18n#^2.1.0",
-    "fs-artifact-filters": "fs-webdev/fs-artifact-filters#3.x",
+    "fs-artifact-filters": "fs-webdev/fs-artifact-filters#4.x",
     "oak-i18n-behavior": "fs-webdev/oak-i18n-behavior#1.x"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "^6.2.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "web-component-tester": "^6.0.0",
     "es6-promise-polyfill": "git+https://github.com/taylorhakes/promise-polyfill#6.0.2"
   },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "polymer": "Polymer/polymer#^1.9"
+      },
+      "devDependencies": {
+        "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+        "web-component-tester": "^4.0.0",
+        "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+      },
+      "resolutions": {
+        "promise-polyfill": "^2.0.1",
+        "webcomponentsjs": "^0.7"
+      }
+    }
+  },
   "resolutions": {
-    "polymer": "^1.2.0"
+    "webcomponentsjs": "^1.0.0"
   }
 }
